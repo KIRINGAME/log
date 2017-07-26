@@ -34,16 +34,16 @@ namespace cmn_log
 		va_end(ap);
 
 #ifdef __APPLE__
-		printf("[SB]%s\n", __UI_LOG_BUFF__);
+		printf("[LOG]%s\n", __UI_LOG_BUFF__);
 #endif
 #ifdef _WIN32
-		OutputDebugStringA("[SB]");
+		OutputDebugStringA("[LOG]");
 		OutputDebugStringA(__UI_LOG_BUFF__);
 		OutputDebugStringA("\r\n");
 #endif
 
 #ifdef __ANDROID__
-		__android_log_print(ANDROID_LOG_INFO, "SB", __UI_LOG_BUFF__);
+		__android_log_print(ANDROID_LOG_INFO, "[LOG]", __UI_LOG_BUFF__);
 #endif
 	}
 }
